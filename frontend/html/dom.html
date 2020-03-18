@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>性能优化 | thefin小站</title>
+    <meta name="description" content="前端进阶之路">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/blog/icon.png">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.7686273b.css" as="style"><link rel="preload" href="/blog/assets/js/app.2ae783e5.js" as="script"><link rel="preload" href="/blog/assets/js/2.2e4d9245.js" as="script"><link rel="preload" href="/blog/assets/js/15.a60debb8.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.7829f542.js"><link rel="prefetch" href="/blog/assets/js/11.e341d4ef.js"><link rel="prefetch" href="/blog/assets/js/12.7d42b558.js"><link rel="prefetch" href="/blog/assets/js/13.9d2ff8b1.js"><link rel="prefetch" href="/blog/assets/js/14.538121db.js"><link rel="prefetch" href="/blog/assets/js/16.91f5be67.js"><link rel="prefetch" href="/blog/assets/js/3.a14d19bd.js"><link rel="prefetch" href="/blog/assets/js/4.da338f48.js"><link rel="prefetch" href="/blog/assets/js/5.b21c5ba3.js"><link rel="prefetch" href="/blog/assets/js/6.6bdd6eb7.js"><link rel="prefetch" href="/blog/assets/js/7.1d01b10a.js"><link rel="prefetch" href="/blog/assets/js/8.53922d04.js"><link rel="prefetch" href="/blog/assets/js/9.b6ed269c.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.7686273b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">thefin小站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架/库" class="dropdown-title"><span class="title">框架/库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frame/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/react.html" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/rn.html" class="nav-link">
+  rn
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/flutter.html" class="nav-link">
+  flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/thefinccc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简历
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/thefinccc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架/库" class="dropdown-title"><span class="title">框架/库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frame/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/react.html" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/rn.html" class="nav-link">
+  rn
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/flutter.html" class="nav-link">
+  flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/thefinccc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简历
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/thefinccc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>html</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/frontend/html/h5.html" class="sidebar-link">h5</a></li><li><a href="/blog/frontend/html/dom.html" class="active sidebar-link">性能优化</a></li></ul></section></li><li><a href="/blog/frontend/css/" class="sidebar-link">css</a></li><li><a href="/blog/frontend/JavaScript/" class="sidebar-link">javascript</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="性能优化"><a href="#性能优化" class="header-anchor">#</a> 性能优化</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">3/18/2020, 4:46:14 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/frontend/html/h5.html" class="prev">
+        h5
+      </a></span> <span class="next"><a href="/blog/frontend/css/">
+        css
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.2ae783e5.js" defer></script><script src="/blog/assets/js/2.2e4d9245.js" defer></script><script src="/blog/assets/js/15.a60debb8.js" defer></script>
+  </body>
+</html>
